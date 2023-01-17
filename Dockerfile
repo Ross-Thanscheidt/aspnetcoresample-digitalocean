@@ -16,5 +16,5 @@ RUN dotnet publish -c release -o /app --no-restore
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
 COPY --from=build /app ./
-EXPOSE 44305
+EXPOSE 80
 ENTRYPOINT ["dotnet", "aspnetapp.dll"]
