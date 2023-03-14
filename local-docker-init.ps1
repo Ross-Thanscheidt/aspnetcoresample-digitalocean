@@ -1,4 +1,4 @@
-docker rm -f aspnetcoresample-digitalocean
-docker rmi -f aspnetcoresample-digitalocean
-docker build --no-cache --progress=plain --tag=aspnetcoresample-digitalocean .
-docker run --name "digital-ocean-sample" -p 5001:80 -d aspnetcoresample-digitalocean
+docker rm -f digital-ocean-sample
+docker rmi -f digital-ocean-aspnetcoresample
+docker build --no-cache --progress=plain --tag=digital-ocean-aspnetcoresample .
+docker run --name "digital-ocean-sample" -p 5001:80 -d digital-ocean-aspnetcoresample
