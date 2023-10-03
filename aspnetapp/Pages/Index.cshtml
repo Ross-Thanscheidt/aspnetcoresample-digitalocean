@@ -27,7 +27,7 @@
             <td>CPU cores</td>
             <td>@Environment.ProcessorCount</td>
         </tr>
-    @if (RuntimeInformation.OSDescription.StartsWith("Linux") && Directory.Exists("/sys/fs/cgroup/memory"))
+    @if (RuntimeInformation.OSDescription.Contains("Linux") && Directory.Exists("/sys/fs/cgroup/memory"))
     {
         <tr>
             <td>cgroup memory usage</td>
