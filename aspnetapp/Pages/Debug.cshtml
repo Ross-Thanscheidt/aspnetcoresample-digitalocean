@@ -1,0 +1,15 @@
+﻿@page
+@model DebugModel
+@{
+    ViewData["Title"] = "Debug Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Debug Page</h1>
+
+    <h5>Environment</h5>
+    @if (@Environment.GetEnvironmentVariable("SHOW_DATABASE_URL") == "TRUE")
+    {
+        <p>@Environment.GetEnvironmentVariable("DATABASE_URL")</p>
+    }
+</div>
