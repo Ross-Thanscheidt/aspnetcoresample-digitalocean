@@ -8,8 +8,33 @@
     <h1 class="display-4">Welcome to the Debug Page</h1>
 
     <h5>Environment</h5>
-    @if (@Environment.GetEnvironmentVariable("SHOW_DATABASE_URL") == "TRUE")
+    @if (Request.Query["Key"] == @Environment.GetEnvironmentVariable("SHOW_DATABASE_INFO"))
     {
-        <p>@Environment.GetEnvironmentVariable("DATABASE_URL")</p>
+        <table width="500" align="center" class="table-striped table-hover">
+            <tr>
+                <td>DATABASE_URL</td>
+                <td>@Environment.GetEnvironmentVariable("DATABASE_URL")</td>
+            </tr>
+            <tr>
+                <td>DATABASE_HOSTNAME</td>
+                <td>@Environment.GetEnvironmentVariable("DATABASE_HOSTNAME")</td>
+            </tr>
+            <tr>
+                <td>DATABASE_PORT</td>
+                <td>@Environment.GetEnvironmentVariable("DATABASE_PORT")</td>
+            </tr>
+            <tr>
+                <td>DATABASE_USERNAME</td>
+                <td>@Environment.GetEnvironmentVariable("DATABASE_USERNAME")</td>
+            </tr>
+            <tr>
+                <td>DATABASE_PASSWORD</td>
+                <td>@Environment.GetEnvironmentVariable("DATABASE_PASSWORD")</td>
+            </tr>
+            <tr>
+                <td>DATABASE_NAME</td>
+                <td>@Environment.GetEnvironmentVariable("DATABASE_NAME")</td>
+            </tr>
+        </table>
     }
 </div>
