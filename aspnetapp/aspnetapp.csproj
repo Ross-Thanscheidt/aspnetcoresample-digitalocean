@@ -5,4 +5,9 @@
     <UserSecretsId>57393389627611478466</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.4" />
+    <PackageReference Include="Npgsql" Version="8.0.0-preview.4" />
+  </ItemGroup>
+
 </Project>
