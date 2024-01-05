@@ -14,7 +14,7 @@
     <h5>Environment</h5>
     <p>
         @RuntimeInformation.FrameworkDescription<br />
-        @RuntimeInformation.OSDescription @(RuntimeInformation.OSDescription.Contains("Debian") ? " (" + System.IO.File.ReadAllLines("/etc/debian_version") + ")" : "")
+        @RuntimeInformation.OSDescription @(RuntimeInformation.OSDescription.Contains("Debian") ? " (" + System.IO.File.ReadAllLines("/etc/debian_version")[0] + ")" : "")
     </p>
 </div>
 
