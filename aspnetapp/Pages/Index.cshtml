@@ -6,6 +6,23 @@
 @{
     ViewData["Title"] = "Home Page";
     var process = Process.GetCurrentProcess();
+
+    var osDescription = RuntimeInformation.OSDescription;
+
+    if (osDescription.Contains("Debian"))
+    {
+        var debianVersion = System.IO.File.ReadAllLines("/etc/debian_version")[0];
+        var majorVersion = debianVersion.Split('.')[0];
+
+        if (osDescription.Contains($" {majorVersion} "))
+        {
+            osDescription = osDescription.Replace($" {majorVersion} ", debianVersion);
+        }
+        else
+        {
+            osDescription += $" ({debianVersion})";
+        }
+    }
 }
 
 <div class="text-center">
@@ -14,7 +31,7 @@
     <h5>Environment</h5>
     <p>
         @RuntimeInformation.FrameworkDescription<br />
-        @RuntimeInformation.OSDescription @(RuntimeInformation.OSDescription.Contains("Debian") ? " (" + System.IO.File.ReadAllLines("/etc/debian_version")[0] + ")" : "")
+        @osDescription
     </p>
 </div>
 
