@@ -16,7 +16,7 @@
 
         if (osDescription.Contains($" {majorVersion} "))
         {
-            osDescription = osDescription.Replace($" {majorVersion} ", debianVersion);
+            osDescription = osDescription.Replace($" {majorVersion} ", $" {debianVersion} ");
         }
         else
         {
