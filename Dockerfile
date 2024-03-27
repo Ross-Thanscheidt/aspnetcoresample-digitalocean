@@ -1,5 +1,5 @@
 # https://hub.docker.com/_/microsoft-dotnet-core
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0-preview AS build
 WORKDIR /source
 
 # copy csproj and restore as distinct layers
